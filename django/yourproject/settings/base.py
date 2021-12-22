@@ -68,9 +68,9 @@ WSGI_APPLICATION = 'yourproject.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
-LANGUAGE_CODE = 'it'
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Europe/Rome'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 

@@ -33,8 +33,8 @@
     shell: ./manage.py collectstatic --noinput chdir={{ django_dir }}
   - name: django migrate
     shell: ./manage.py migrate --noinput chdir={{ django_dir }}
-  - name: django loaddata
-    shell: ./manage.py loaddata user chdir={{ django_dir }}
+  # - name: django loaddata
+  #   shell: ./manage.py loaddata user chdir={{ django_dir }}
 
 - hosts: all
   gather_facts: no

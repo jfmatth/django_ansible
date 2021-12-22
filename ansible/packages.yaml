@@ -1,11 +1,11 @@
 ---
 - hosts: all
   gather_facts: no
-  become: true
+
   tasks:
-    # - name: Running apt update
-    #   ansible.builtin.package:
-    #     update_cache:yes
+    - name: Running apt update
+      ansible.builtin.package:
+        update_cache:yes
 
     - name: Installing required packages
       ansible.builtin.package: name={{item}} state=present
