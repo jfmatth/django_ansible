@@ -1,20 +1,23 @@
 ---
 - hosts: all
   gather_facts: no
+  become: true
   tasks:
-    - name: Running apt update
-      apt: update_cache=yes
+    # - name: Running apt update
+    #   ansible.builtin.package:
+    #     update_cache:yes
+
     - name: Installing required packages
-      apt: name={{item}} state=present
+      ansible.builtin.package: name={{item}} state=present
       with_items:
        - fail2ban
        - postgresql
        - postgresql-client
        - git
-       - python-pip
-       - rdiff-backup
-       - libpq-dev
-       - python-psycopg2
+       - python3-pip
+      #  - rdiff-backup
+      #  - libpq-dev
+       - python3-psycopg2
        - uwsgi
-       - uwsgi-plugin-python
+       - uwsgi-plugin-python3
        - nginx

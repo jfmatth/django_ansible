@@ -1,9 +1,11 @@
 all:
     hosts:
-        yourserver
+        django:
+            ansible_host: 192.168.1.35
+            ansible_user: root
     vars:
-        repo_url: ssh://git@bitbucket.org/youruser
-        repo: yourproject
+        repo_url: https://github.com/jfmatth/
+        repo: django_ansible
         home_dir: /home/ubuntu
         repo_dir: "{{ home_dir }}/{{ repo }}"
         django_dir: "{{ repo_dir }}/django"
@@ -12,3 +14,5 @@ all:
         dbname: django
         dbuser: django
         dbpassword: "{{ lookup('password', 'postgresqlpasswd') }}"
+        server_name: 192.168.1.35
+
